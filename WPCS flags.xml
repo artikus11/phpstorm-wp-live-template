@@ -1,0 +1,78 @@
+<templateSet group="WPCS flags">
+  <template name="wpcs_sanitization" value="// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" description="Allow unsanitized code" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_ign" value="// phpcs:ignore $flags$ $END$" description="phpcs:ignore" toReformat="false" toShortenFQNames="true">
+    <variable name="flags" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_xss" value="// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped" description="Allow unescaped code" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_csil" value="// @codingStandardsIgnoreLine" description="@codingStandardsIgnoreLine" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_cache" value="// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching" description="Allow database query without caching" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_csrf" value="// phpcs:ignore WordPress.Security.NonceVerification" description="No need for nonce verification/CSRF" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_db_call" value="// phpcs:ignore WordPress.Sniffs.DB.DirectDatabaseQuery" description="Allow direct database query" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_input_var" value="// phpcs:ignore WordPress.Security.EscapeOutput" description="Allow use of superglobal" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_loose_comparison" value="// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison" description="Allow loose comparison" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_override" value="// phpcs:ignore WordPress.WP.GlobalVariablesOverride" description="Allow override WordPress globals" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_precision_alignment" value="// phpcs:ignore WordPress.Sniffs.PrecisionAlignment" description="Ignore precision alignment" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_prefix" value="// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals" description="Allow non-prefixed function/class/variable/constant in the global namespace" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_slow_query" value="// phpcs:ignore WordPress.VIP.SlowQuery" description="Allow slow query" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_spelling" value="// phpcs:ignore: WordPress.WP.CapitalPDangit" description="Allow incorrect \&quot;WordPress\&quot; spelling" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcs_unprepared_sql" value="// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared" description="Allow unprepared SQL query" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,254 @@
+<templateSet group="WP">
+  <template name="rt" value="register_taxonomy( '$SLUG$', array($OBJECT$), array(&#10;&#9;'description'       =&gt; '$DESCRIPTION$',&#10;&#9;'labels'            =&gt; array(&#10;&#9;&#9;'name'                       =&gt; _x( '$PLURAL$', 'taxonomy general name', '$DOMAIN$' ),&#10;&#9;&#9;'singular_name'              =&gt; _x( '$SINGULAR$', 'taxonomy singular name', '$DOMAIN$' ),&#10;&#9;&#9;'search_items'               =&gt; __( 'Search $PLURAL$', '$DOMAIN$' ),&#10;&#9;&#9;'popular_items'              =&gt; __( 'Popular $PLURAL$', '$DOMAIN$' ),&#10;&#9;&#9;'all_items'                  =&gt; __( 'All $PLURAL$', '$DOMAIN$' ),&#10;&#9;&#9;'parent_item'                =&gt; __( 'Parent $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'parent_item_colon'          =&gt; __( 'Parent $SINGULAR$:', '$DOMAIN$' ),&#10;&#9;&#9;'edit_item'                  =&gt; __( 'Edit $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'view_item'                  =&gt; __( 'View $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'update_item'                =&gt; __( 'Update $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'add_new_item'               =&gt; __( 'Add New $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'new_item_name'              =&gt; __( 'New $SINGULAR$ Name', '$DOMAIN$' ),&#10;&#9;&#9;'separate_items_with_commas' =&gt; __( 'Separate $PLURALLOWERCASE$ with commas', '$DOMAIN$' ),&#10;&#9;&#9;'add_or_remove_items'        =&gt; __( 'Add or remove $PLURALLOWERCASE$', '$DOMAIN$' ),&#10;&#9;&#9;'choose_from_most_used'      =&gt; __( 'Choose from the most used $PLURALLOWERCASE$', '$DOMAIN$' ),&#10;&#9;&#9;'not_found'                  =&gt; __( 'No $PLURALLOWERCASE$ found.', '$DOMAIN$' ),&#10;&#9;),&#10;&#9;'public'            =&gt; $PUBLIC$,&#10;&#9;'show_ui'           =&gt; $UI$,&#10;&#9;'show_in_nav_menus' =&gt; $MENU$,&#10;&#9;'show_tagcloud'     =&gt; $TAGCLOUD$,&#10;&#9;'meta_box_cb'       =&gt; $METABOX$,&#10;&#9;'show_admin_column' =&gt; $ADMINCOLUMN$,&#10;&#9;'hierarchical'      =&gt; $HIERARCHICAL$,&#10;&#9;'query_var'         =&gt; '$QUERYVAR$',&#10;&#9;'rewrite'           =&gt; array(&#10;&#9;&#9;'slug'         =&gt; '$REWRITESLUG$',&#10;&#9;&#9;'with_front'   =&gt; $REWRITEFRONT$,&#10;&#9;&#9;'hierarchical' =&gt; $REWRITEHIERARCHICAL$,&#10;&#9;),&#10;&#9;'capabilities'      =&gt; array(),&#10;) );" description="register_taxonomy" toReformat="true" toShortenFQNames="true">
+    <variable name="SLUG" expression="" defaultValue="&quot;taxonomy&quot;" alwaysStopAt="true" />
+    <variable name="OBJECT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PLURAL" expression="" defaultValue="&quot;Tags&quot;" alwaysStopAt="true" />
+    <variable name="SINGULAR" expression="" defaultValue="&quot;Tag&quot;" alwaysStopAt="true" />
+    <variable name="DOMAIN" expression="" defaultValue="&quot;text-domain&quot;" alwaysStopAt="true" />
+    <variable name="PLURALLOWERCASE" expression="decapitalize(PLURAL)" defaultValue="" alwaysStopAt="false" />
+    <variable name="PUBLIC" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="UI" expression="" defaultValue="PUBLIC" alwaysStopAt="false" />
+    <variable name="MENU" expression="" defaultValue="PUBLIC" alwaysStopAt="false" />
+    <variable name="TAGCLOUD" expression="" defaultValue="UI" alwaysStopAt="false" />
+    <variable name="METABOX" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <variable name="ADMINCOLUMN" expression="enum(&quot;false&quot;,&quot;true&quot;)" defaultValue="false" alwaysStopAt="true" />
+    <variable name="HIERARCHICAL" expression="enum(&quot;false&quot;,&quot;true&quot;)" defaultValue="false" alwaysStopAt="true" />
+    <variable name="QUERYVAR" expression="" defaultValue="SLUG" alwaysStopAt="true" />
+    <variable name="REWRITESLUG" expression="" defaultValue="SLUG" alwaysStopAt="true" />
+    <variable name="REWRITEFRONT" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="true" alwaysStopAt="true" />
+    <variable name="REWRITEHIERARCHICAL" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="true" alwaysStopAt="true" />
+  </template>
+  <template name="rpt" value="register_post_type( '$SLUG$', array(&#10;&#9;'description'          =&gt; '$DESCRIPTION$',&#10;&#9;'labels'               =&gt; array(&#10;&#9;&#9;'name'               =&gt; _x( '$PLURAL$', 'post type general name', '$DOMAIN$' ),&#10;&#9;&#9;'singular_name'      =&gt; _x( '$SINGULAR$', 'post type singular name', '$DOMAIN$' ),&#10;&#9;&#9;'menu_name'          =&gt; _x( '$PLURAL$', 'admin menu', '$DOMAIN$' ),&#10;&#9;&#9;'name_admin_bar'     =&gt; _x( '$SINGULAR$', 'add new $SLUG$ on admin bar', '$DOMAIN$' ),&#10;&#9;&#9;'add_new'            =&gt; _x( 'Add New', 'post_type', '$DOMAIN$' ),&#10;&#9;&#9;'add_new_item'       =&gt; __( 'Add New $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'edit_item'          =&gt; __( 'Edit $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'new_item'           =&gt; __( 'New $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'view_item'          =&gt; __( 'View $SINGULAR$', '$DOMAIN$' ),&#10;&#9;&#9;'search_items'       =&gt; __( 'Search $PLURAL$', '$DOMAIN$' ),&#10;&#9;&#9;'not_found'          =&gt; __( 'No $PLURALLOWERCASE$ found.', '$DOMAIN$' ),&#10;&#9;&#9;'not_found_in_trash' =&gt; __( 'No $PLURALLOWERCASE$ found in Trash.', '$DOMAIN$' ),&#10;&#9;&#9;'parent_item_colon'  =&gt; __( 'Parent $SINGULAR$:', '$DOMAIN$' ),&#10;&#9;&#9;'all_items'          =&gt; __( 'All $PLURAL$', '$DOMAIN$' ),&#10;&#9;),&#10;&#9;'public'               =&gt; $PUBLIC$,&#10;&#9;'hierarchical'         =&gt; $HIERARCHICAL$,&#10;&#9;'exclude_from_search'  =&gt; $NOSEARCH$,&#10;&#9;'publicly_queryable'   =&gt; $QUERYABLE$,&#10;&#9;'show_ui'              =&gt; $UI$,&#10;&#9;'show_in_menu'         =&gt; $MENU$,&#10;&#9;'show_in_nav_menus'    =&gt; $NAVMENU$,&#10;&#9;'show_in_admin_bar'    =&gt; $ADMINBAR$,&#10;&#9;'menu_position'        =&gt; $MENUPOS$,&#10;&#9;'menu_icon'            =&gt; $ICON$,&#10;&#9;'capability_type'      =&gt; '$CAPABILITY$',&#10;&#9;'capabilities'         =&gt; array(),&#10;&#9;'map_meta_cap'         =&gt; null,&#10;&#9;'supports'             =&gt; array( 'title', 'editor' ),&#10;&#9;'register_meta_box_cb' =&gt; $METABOX$,&#10;&#9;'taxonomies'           =&gt; array(),&#10;&#9;'has_archive'          =&gt; $ARCHIVE$,&#10;&#9;'rewrite'              =&gt; array(&#10;&#9;&#9;'slug'       =&gt; '$SLUG$',&#10;&#9;&#9;'with_front' =&gt; $WITHFRONT$,&#10;&#9;&#9;'feeds'      =&gt; $FEEDS$,&#10;&#9;&#9;'pages'      =&gt; $PAGES$,&#10;&#9;),&#10;&#9;'query_var'            =&gt; $QUERYVAR$,&#10;&#9;'can_export'           =&gt; $EXPORT$,&#10;) );&#10;$END$" description="register_post_type" toReformat="true" toShortenFQNames="true">
+    <variable name="SLUG" expression="" defaultValue="&quot;post-type&quot;" alwaysStopAt="true" />
+    <variable name="DESCRIPTION" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="PLURAL" expression="" defaultValue="&quot;Posts&quot;" alwaysStopAt="true" />
+    <variable name="SINGULAR" expression="" defaultValue="&quot;Post&quot;" alwaysStopAt="true" />
+    <variable name="DOMAIN" expression="" defaultValue="&quot;text-domain&quot;" alwaysStopAt="true" />
+    <variable name="PLURALLOWERCASE" expression="decapitalize(PLURAL)" defaultValue="" alwaysStopAt="false" />
+    <variable name="PUBLIC" expression="enum(&quot;false&quot;, &quot;true&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="HIERARCHICAL" expression="enum(&quot;false&quot;, &quot;true&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="NOSEARCH" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="QUERYABLE" expression="" defaultValue="PUBLIC" alwaysStopAt="false" />
+    <variable name="UI" expression="" defaultValue="PUBLIC" alwaysStopAt="false" />
+    <variable name="MENU" expression="" defaultValue="UI" alwaysStopAt="false" />
+    <variable name="NAVMENU" expression="" defaultValue="PUBLIC" alwaysStopAt="false" />
+    <variable name="ADMINBAR" expression="" defaultValue="MENU" alwaysStopAt="false" />
+    <variable name="MENUPOS" expression="enum(&quot;null&quot;,&quot;5&quot;,&quot;10&quot;,&quot;15&quot;,&quot;20&quot;,&quot;25&quot;,&quot;60&quot;,&quot;65&quot;,&quot;70&quot;,&quot;75&quot;,&quot;80&quot;,&quot;100&quot;)" defaultValue="null" alwaysStopAt="true" />
+    <variable name="ICON" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <variable name="CAPABILITY" expression="" defaultValue="&quot;post&quot;" alwaysStopAt="true" />
+    <variable name="METABOX" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <variable name="ARCHIVE" expression="" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="WITHFRONT" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="FEEDS" expression="" defaultValue="ARCHIVE" alwaysStopAt="false" />
+    <variable name="PAGES" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="QUERYVAR" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="EXPORT" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="afn" value="add_filter( '$hook$', function ($END$) {&#10;&#9;&#10;&#9;return $param$;&#10;} );" description="add_filter anonim func" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="param" expression="" defaultValue="$param" alwaysStopAt="false" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpa" value="$$$args$ = wp_parse_args( $$$source$, array(&#10;&#9;$key$ =&gt; $value$,&#10;) );" description="wp_parse_args" toReformat="true" toShortenFQNames="true">
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="source" expression="args" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="af" value="add_filter( '$hook$', '$callback$' );&#10;$END$" description="add_filter" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="__" value="__( $SELECTION$, '$textdomain$' )" description="__" toReformat="false" toShortenFQNames="true">
+    <variable name="textdomain" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="aam" value="add_action( '$hook$', array( $class$, '$method$' ) );$END$" description="add_action &gt; method" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="&quot;$this&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="hook" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="afm" value="add_filter( '$hook$', array( $class$, '$method$' ) );$END$" description="add_filter &gt; method" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="&quot;$this&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="hook" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ea" value="esc_attr( $SELECTION$ )" description="esc_attr" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="aa" value="add_action( '$hook$', '$callback$' );&#10;$END$" description="add_action" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="php" value="&lt;?php $END$ ?&gt;" description="php tags with a new line" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpfor" value="&lt;?php for ( $EXP1$; $EXP2$; $EXP3$ ) : ?&gt;&#10;$END$&#10;&lt;?php endfor; ?&gt;&#10;" description="&lt;?php for...endfor; ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="EXP1" expression="phpVar" defaultValue="&quot;$i=0&quot;" alwaysStopAt="true" />
+    <variable name="EXP2" expression="" defaultValue="&quot;$i&lt;10&quot;" alwaysStopAt="true" />
+    <variable name="EXP3" expression="" defaultValue="&quot;$i++&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpfore" value="&lt;?php foreach ( $ITERABLE$ as $VAR_VALUE$ ) : ?&gt;&#10;$END$&#10;&lt;?php endforeach; ?&gt;&#10;" description="&lt;?php foreach...endforeach; ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="ITERABLE" expression="phpVar" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR_VALUE" expression="phpSuggestVariableName()" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpif" value="&lt;?php if ( $COND$ ) : ?&gt;&#10;$END$&#10;&lt;?php endif; ?&gt;&#10;" description="&lt;?php if... ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="COND" expression="phpSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpife" value="&lt;?php if ( $COND$ ) : ?&gt;&#10;$END$&#9;&#10;&lt;?php else : ?&gt;&#10;&#10;&lt;?php endif; ?&gt;&#10;" description="&lt;?php if...endif; ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="COND" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpwil" value="&lt;?php while( $COND$ ) : ?&gt;&#10;$END$&#10;&lt;?php endwhile; ?&gt;&#10;" description="&lt;?php while...endwile; ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="COND" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="tt" value="__('$TEXT$','$TEXTDOMAIN$');&#10;$END$" description="__('text','textdomain')" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEXTDOMAIN" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tte" value="_e('$TEXT$','$TEXTDOMAIN$');&#10;$END$ " description="_e('text','textdomain')" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEXTDOMAIN" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpcont" value="&lt;?php the_content(); ?&gt;" description="the_content with php tags" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="wpexce" value="&lt;?php the_excerpt(); ?&gt;" description="the_excerpt with php tags" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="wplink" value="&lt;?php the_permalink(); ?&gt;" description="the_permalink with php tags" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="wploop" value="&lt;?php if(have_posts()) :?&gt;&#10;&#9;&lt;?php while(have_posts()) : the_post();?&gt;&#10;&#9;&#9;$END$&#10;&#9;&lt;?php endwhile;?&gt;&#10;&lt;?php else :?&gt;&#10;&#9;&#10;&lt;?php endif;?&gt;" description="wodpress loop with php tags" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="wptitle" value="&lt;?php the_title(); ?&gt;" description="the_title with php tags" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="ra" value="remove_action( '$hook$', '$callback$', $prioritet$);&#10;$END$" description="remove_action" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prioritet" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="rf" value="remove_filter( '$hook$', '$callback$', $prioritet$ );&#10;$END$" description="remove_filter" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prioritet" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="aaf" value="add_action( '$hook$', '$callback$' );&#10;function $callback$(){&#10;&#10;}&#10;$END$" description="add_action_to_calback" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="aff" value="add_filter( '$hook$', '$callback$' );&#10;function $callback$(){&#10;&#10;}" description="add_filter_to_callback" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="callback" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="hph" value="?&gt; &#10;$END$ &#10;&lt;?php " description="tag php mirrore" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="aan" value="add_action( '$hook$', function () {&#10;&#9;$END$&#10;} );" description="add_action anonim func" toReformat="false" toShortenFQNames="true">
+    <variable name="hook" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wcl" value="$logger = wc_get_logger();&#10;$logger-&gt;debug( $END$ );" description="wc login" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="pld" value="/**&#10; * Plugin Name: $END$&#10; * Plugin URI: wpruse.ru&#10; * Text Domain: &#10; * Domain Path: /languages&#10; * Description: &#10; * Version: 1.0.0&#10; * Author: Artem Abramovich&#10; * Author URI: https://wpruse.ru/&#10; * License: GPL-2.0+&#10; * License URI: http://www.gnu.org/licenses/gpl-2.0.txt&#10; *&#10; * WC requires at least: 3.3.0&#10; * WC tested up to: 3.6&#10; *&#10; */" description="Описание плагина" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="abs" value="if ( ! defined( 'ABSPATH' ) ) {&#10;&#9;exit;&#10;}" description="ABSPATH" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

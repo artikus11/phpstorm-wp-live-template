@@ -1,0 +1,12 @@
+<templateSet group="PHP">
+  <template name="prr" value="echo '&lt;pre&gt;';&#10;print_r ($END$);&#10;echo '&lt;/pre&gt;';" description="print_r from pre" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="per" value="error_log( print_r( $END$, 1 ) );" description="error_log(print_r(var,1 ));" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
